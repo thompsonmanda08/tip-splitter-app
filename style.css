@@ -2,7 +2,6 @@
   --clr--neutral--900: hsl(183, 100%, 15%);
   --clr--neutral--700: hsl(186, 14%, 43%);
   --clr--neutral--600: hsl(184, 14%, 56%);
-  --clr--neutral--400: hsl(172, 67%, 45%);
   --clr--neutral--300: hsl(185, 41%, 84%);
   --clr--neutral--200: hsl(189, 41%, 97%);
   --clr--neutral--100: hsl(0, 0%, 100%);
@@ -38,7 +37,7 @@ body {
 
 .container {
   max-width: 85vw;
-  min-width: 375px;
+  min-width: 800px;
   width: 50vw;
   background-color: var(--clr--neutral--100);
   border-radius: 2em;
@@ -169,14 +168,14 @@ input:focus {
 .amount-info p {
   display: inline;
   font-size: 0.8rem;
-  color: var(--clr--neutral--400);
+  color: var(--clr--primary);
 }
 
 .amount {
   display: flex;
   flex-direction: row;
   font-size: 2.2rem;
-  color: var(--clr--neutral--400);
+  color: var(--clr--primary);
   margin-left: 1em;
 }
 
@@ -200,14 +199,19 @@ input:focus {
   color: hsl(228, 45%, 44%);
 }
 
-@media only screen and (max-width: 1000px) {
+/*********************
+MOBILE SCREENS
+********************/
+
+@media only screen and (max-width: 800px) {
   .container {
     max-width: 85vw;
     min-width: 375px;
     width: 70vw;
     background-color: var(--clr--neutral--100);
     border-radius: 2em;
-    padding: 1em 3em;
+    padding: 2em 2em;
+    margin-top: 2em;
   }
 
   .row {
@@ -219,5 +223,25 @@ input:focus {
 
   .col {
     width: 100%;
+  }
+  .amount-details {
+    align-items: center;
+    justify-content: baseline;
+  }
+
+  .amount-info h2 {
+    font-size: 0.8rem;
+  }
+
+  .amount-info p {
+    font-size: 0.7rem;
+  }
+
+  .amount {
+    font-size: 1.75rem;
+  }
+
+  #resetBtn {
+    margin-top: 1.5em;
   }
 }
