@@ -8,6 +8,9 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,22 +18,26 @@
 </head>
 
 <body>
+  <header>
+    <nav></nav>
+  </header>
 
-  <header></header>
-  <nav></nav>
   <main class="wrapper">
     <h1 class="app-name">Tip Calculator App</h1>
+
     <div class="container">
       <div class="row">
 
         <!-- LEFT SIDE COLUMN -->
         <div class="col">
+
           <h2>Bill</h2>
           <div class="bill-form">
             <form class="bill-input" action="">
               <input type="text">
             </form>
           </div>
+
           <h2>Select tip %</h2>
           <div class="tip-selector">
             <div class="tip-amount">5%</div>
@@ -58,14 +65,25 @@
               <p>/ person</p>
             </div>
 
+            <div class="amount">
+              $<span id="tip-amount">0.00</span>
+            </div>
+
           </div>
           <div class="amount-details">
             <div class="per-person">
               <h3>Total</h3>
               <p>/ Person</p>
             </div>
+
+            <div class="amount">
+              $<span id="tip-amount">0.00</span>
+            </div>
+
           </div>
+          <button id="resetBtn"></button>
         </div>
+
       </div>
     </div>
   </main>
@@ -76,17 +94,6 @@
       Coded by <a href="#">Your Name Here</a>.
     </div>
   </footer>
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-
-
-
   <script src="app.js"></script>
 </body>
 
