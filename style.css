@@ -84,30 +84,41 @@ form svg {
   font-weight: 700;
 }
 
-input {
+form input {
   background-color: var(--clr--neutral--200);
   border: none;
   width: 100%;
   height: 100%;
-  padding-left: 2.5em;
-  padding-right: 2.25em;
   text-align: right;
+  padding-left: 2.5em;
+  padding-right: 0.5em;
+  border-radius: .15em;
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--clr--neutral--900);
+  -webkit-border-radius: .15em;
+  -moz-border-radius: .15em;
+  -ms-border-radius: .15em;
+  -o-border-radius: .15em;
 }
 
-input::placeholder {
+form input::placeholder {
   font-size: 1.75rem;
   color: var(--clr--neutral--900);
   font-weight: 900;
   padding-left: 2.5em;
-  padding-right: 2.25em;
+  padding-right: .5em;
 }
 
-input:focus {
+form input:focus {
   font-size: 1.75rem;
   color: var(--clr--neutral--900);
   font-weight: 900;
   padding-left: 2.5em;
-  padding-right: 1.25em;
+  padding-right: .5em;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--clr--primary);
 }
 
 .bill-form {
@@ -125,21 +136,52 @@ input:focus {
   gap: 1rem;
 }
 
-#tip-selector div {
+.btn-tip{
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  font-size: 1.125rem;
   padding: 0.5em 0.25vw;
   background-color: var(--clr--neutral--900);
   color: var(--clr--neutral--100);
   border-radius: 0.25em;
+  outline: none;
+  border: none;
 }
 
-#custom-amount {
+.btn-tip:hover {
   background-color: var(--clr--neutral--300);
   color: var(--clr--neutral--900);
 }
+
+#custom-tip-input {
+  background-color: var(--clr--neutral--300);
+  color: var(--clr--neutral--900);
+  min-width: 100px;
+  padding: 0 .75em;
+  text-align: right;
+}
+
+#custom-tip-input::placeholder {
+  font-size: .9rem;
+  font-weight: 900;
+
+}
+
+#custom-tip-input:focus {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr--neutral--900);
+  font-weight: 900;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--clr--primary);
+  
+
+}
+
 
 /*** RIGHT SIDE COLUMN ***/
 .col-right {

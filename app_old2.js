@@ -11,16 +11,19 @@ class SpiltTheBill {
 
     // A method to clear everything on the screen
     resetAll(){
-        this.bill_amount = '0.00';
-        this.tip_percentage = '0.00';
-        this.num_of_People = 1;
+        this.tipPerPersonTextElement = '0.00';
+        this.totalAmountTextElement = '0.00'
+        this.billAmount = 0.00;
+        this.tipPercentage = undefined;
+        this.numOfPeople = 1;
+
 
     }
 
     // Get the bill amount entered in the form
     getBill(bill_amount) {
         if(bill_amount === 0 || bill_amount === '') return billAmount.setCustomValidity('Enter a valid bill amount');
-        this.bill_amount = bill_amount;
+        this.billAmount = bill_amount;
     }
 
     // Gets and sets the percentage amount to be used for calculations
@@ -28,54 +31,44 @@ class SpiltTheBill {
         /* Assign the tip percentage */
         switch(tip_percentage) {
             case '5%':
-                this.tip_percentage = 0.05;
+                tip_percentage = 0.05;
                 break;
             case '10%':
-                this.tip_percentage = 0.1;
+                tip_percentage = 0.1;
                 break;
             case '15%':
-                this.tip_percentage = 0.15;
+                tip_percentage = 0.15;
                 break;
             case '25%':
-                this.tip_percentage = 0.25;
+                tip_percentage = 0.25;
                 break
             case '50%':
-                this.tip_percentage = 0.5;
+                tip_percentage = 0.5;
                 break
             default:
-                this.tip_percentage = 0;
+                tip_percentage = 0;
         }
 
+        return this.getTipPercentage = tip_percentage;
     }
 
     // Gets the number of people to split the bill amongst
     getPeopleNum(num_of_people){
-       /* if(num_of_people === 0 || num_of_people === '') return numOfPeople.setCustomValidity("Can't be Zero!");*/
-        this.num_of_People = num_of_people;
+        if(num_of_people === 0 || num_of_people === '') return numOfPeople.setCustomValidity("Can't be Zero!");
+        this.numOfPeople = num_of_people;
     }
 
     //Updates the Total amount values per person
     updateTotalDisplay(){
-        
-        this.billAmount.value = parseFloat(this.bill_amount);
-        this.tip_amount = parseFloat(this.tip_percentage) * parseFloat(this.bill_amount);
-
-        if (this.numOfPeople != null) {
-            this.numOfPeople.value = parseInt(this.num_of_People);
-        }
-
-        if (this.numOfPeople.value == 0) {
-            numOfPeople.setCustomValidity("Can't be Zero!");
-        }
-
-        this.tipPerPersonTextElement.innerText = (this.tip_amount) / this.numOfPeople.value;
-        this.totalAmountTextElement.innerText = (this.billAmount.value) / this.numOfPeople.value;
-
-
+        this.tipAmount = parseFloat(this.tipPercentage) * parseFloat(this.billAmount);
+        this.billAmount = parseFloat(this.billAmount);
+        this.numOfPeople = parseInt(this.numOfPeople);
+        this.tipPerPersonTextElement.innerText = this.tipAmount / this.numOfPeople;
+        this.totalAmountTextElement.innerText = (this.tipAmount + this.billAmount) / this.numOfPeople;
     }
 }
 
-// VARIABLES OF ELEMENTS
+
 const billAmount = document.querySelector('[data-bill-amount]');
 const tipPercentage = document.querySelectorAll('[data-tip-percentage]');
 const numOfPeople = document.querySelector('[data-num-people]');
@@ -83,16 +76,9 @@ const tipPerPersonTextElement = document.querySelector('[data-tip-amount]');
 const totalAmountTextElement = document.querySelector('[data-total-amount]');
 const resetButton = document.querySelector('[data-reset-button]');
 
-// APP OBJECT
+
+
 const splitMyBill = new SpiltTheBill(tipPerPersonTextElement, totalAmountTextElement, billAmount, tipPercentage, numOfPeople);
-
-//EVENTS THAT TRIGGER THE APP
-// Clears all values
-resetButton.addEventListener('click', () => {
-    splitMyBill.resetAll();
-    splitMyBill.updateTotalDisplay();
-});
-
 
 // Get the inputted bill amount from the form
 billAmount.addEventListener(
@@ -120,5 +106,11 @@ numOfPeople.addEventListener(
 
     }
 )
+
+resetButton.addEventListener('click', () => {
+    splitMyBill.resetAll();
+    splitMyBill.updateTotalDisplay();
+});
+
 
 
