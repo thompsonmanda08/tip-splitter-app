@@ -16,8 +16,8 @@ I learnt more about CSS custom properties, semantic HTML % and responsive web de
 
 ### Screenshot
 
-![](solution-screenshots\desktop-screens.png)
-![](solution-screenshots\tablet&mobile-screens.png)
+![solution-screenshots\desktop-screens.png](solution-screenshots\desktop-screens.png)
+![solution-screenshots\tablet&mobile-screens.png](solution-screenshots\tablet&mobile-screens.png)
 
 ### Built with
 
@@ -26,6 +26,6 @@ I learnt more about CSS custom properties, semantic HTML % and responsive web de
 - Flexbox
 - CSS Grid
 
-- Solution URL: [Add solution URL here](https://thompsonmanda08.github.io/tip-splitter-app/)
+- Solution URL: [https://thompsonmanda08.github.io/tip-splitter-app/](https://thompsonmanda08.github.io/tip-splitter-app/)
 
 # tip-splitter-app
