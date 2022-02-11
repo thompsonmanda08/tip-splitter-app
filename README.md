@@ -17,7 +17,7 @@ I learnt more about CSS custom properties, semantic HTML % and responsive web de
 ### Screenshot
 
 ![solution-screenshots\desktop-screens.png](solution-screenshots\desktop-screens.png)
-![solution-screenshots\tablet&mobile-screens.png](solution-screenshots\tablet&mobile-screens.png)
+![](solution-screenshots\tablet&mobile-screens.png)
 
 ### Built with
 
