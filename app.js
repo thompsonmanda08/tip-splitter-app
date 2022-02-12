@@ -176,7 +176,8 @@ class SpiltTheBill {
         this.tip_amount / this.num_of_People
       ).toFixed(2);
       this.totalAmountTextElement.innerText = (
-        this.bill_amount / this.num_of_People
+        (parseFloat(this.bill_amount) + parseFloat(this.tip_amount)) /
+        this.num_of_People
       ).toFixed(2);
     }
 
